@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2E9B57",
+                        "background-light": "#F0FFF4",
+                        "background-dark": "#0a1a0f",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Navbar -->
+<header class="w-full px-6 lg:px-20 py-4 flex items-center justify-between border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">nutrition</span>
+<h1 class="text-2xl font-black tracking-tight text-primary">NutriAI</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="hidden sm:inline text-slate-500 dark:text-slate-400">Đã có tài khoản?</span>
+<a class="text-primary font-bold hover:underline" href="#">Đăng nhập</a>
+</div>
+</header>
+<main class="flex-grow flex flex-col lg:flex-row">
+<!-- Left Column: Sign up form -->
+<section class="w-full lg:w-1/2 p-8 lg:p-20 flex flex-col justify-center">
+<div class="max-w-md mx-auto w-full">
+<h2 class="text-4xl font-extrabold text-slate-900 dark:text-slate-50 mb-3 leading-tight">Bắt đầu hành trình của bạn</h2>
+<p class="text-slate-600 dark:text-slate-400 mb-8 text-lg">Tạo tài khoản để nhận kế hoạch dinh dưỡng cá nhân hóa ngay hôm nay</p>
+<form class="space-y-5">
+<div class="space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Họ và tên</label>
+<input class="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3" placeholder="Nhập họ và tên của bạn" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Email</label>
+<input class="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3" placeholder="example@email.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Mật khẩu</label>
+<input class="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 items-end">
+<div class="flex-1 min-w-[140px] space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Giới tính</label>
+<div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+<button class="flex-1 py-2 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-sm font-bold" type="button">Nam</button>
+<button class="flex-1 py-2 rounded-lg text-slate-500 text-sm font-bold" type="button">Nữ</button>
+</div>
+</div>
+<div class="w-24 space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Tuổi</label>
+<input class="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3" placeholder="22" type="number"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Chiều cao (cm)</label>
+<input class="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3" placeholder="170" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Cân nặng (kg)</label>
+<input class="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3" placeholder="65" type="number"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Mức độ vận động</label>
+<select class="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3">
+<option>Ít vận động (Văn phòng)</option>
+<option>Vận động nhẹ (1-2 lần/tuần)</option>
+<option>Vận động vừa (3-5 lần/tuần)</option>
+<option>Vận động mạnh (Hàng ngày)</option>
+</select>
+</div>
+<div class="space-y-3">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Mục tiêu sức khỏe</label>
+<div class="grid grid-cols-3 gap-3">
+<div class="border-2 border-primary bg-primary/5 rounded-xl p-3 flex flex-col items-center text-center cursor-pointer transition hover:bg-primary/10">
+<span class="material-symbols-outlined text-primary mb-1">trending_down</span>
+<span class="text-xs font-bold">Giảm cân</span>
+</div>
+<div class="border-2 border-slate-200 dark:border-slate-700 rounded-xl p-3 flex flex-col items-center text-center cursor-pointer transition hover:border-primary/50">
+<span class="material-symbols-outlined text-slate-400 mb-1">fitness_center</span>
+<span class="text-xs font-bold">Tăng cơ</span>
+</div>
+<div class="border-2 border-slate-200 dark:border-slate-700 rounded-xl p-3 flex flex-col items-center text-center cursor-pointer transition hover:border-primary/50">
+<span class="material-symbols-outlined text-slate-400 mb-1">accessibility_new</span>
+<span class="text-xs font-bold">Duy trì</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/25 flex items-center justify-center gap-2 transition-transform active:scale-95 mt-6" type="submit">
+                        Tạo kế hoạch của tôi <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+</div>
+</section>
+<!-- Right Column: Visual panel -->
+<section class="w-full lg:w-1/2 bg-primary/5 p-8 lg:p-20 flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Decorative circle -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="z-10 w-full max-w-lg space-y-8">
+<!-- Meal Suggestion Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">restaurant_menu</span>
+                            Gợi ý thực đơn hôm nay
+                        </h3>
+<span class="text-primary text-xs font-bold bg-primary/10 px-2 py-1 rounded-full uppercase">Thứ Hai</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition">
+<img class="w-16 h-16 rounded-xl object-cover shadow-sm" data-alt="Salad với ức gà và trứng luộc" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVLHus_jFTtNvsrslAOm_it42TvjGbWcPa98-ed9jnKH-hKWBVAX5GHtOq5fC2SiKY2mOA1dPQ_TRTrjUF1ddggfJlOErpCU0a4xEWLjKbDoS1pxk9RWfGhBOhohGZ2KU13o_e94L9auj5FW5NKpR6HOWYmziTkSA7Xp8xjdlbNtAL5l0w-ouedmrgZvW9zWTLZwcCDuAO8fsS44CNeCBpcYQK52L4mVL-sBt_cDSCsTXuDAe5V_rT5hVD1OGAgKmstQNm1YjNR3my"/>
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-100">Salad Ức Gà &amp; Trứng</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">320kcal • 25g Protein</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition">
+<img class="w-16 h-16 rounded-xl object-cover shadow-sm" data-alt="Cá hồi nướng ăn kèm gạo lứt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnmAwL4HgtFk0IiXt0LbDNNiWQypDpjaW3GaSQdDMcUtkr1uyl6bXy9iaYhP_KfyVvgB8xDzRrTS--lvESzT7feit_bsC9f1p44m4NikfW0tKsJUmpn80rm-XHFhQpc_7uYPayRPKhFKmWdUcMqdY_-yHd5UqNBDPptlBS3KxMFLiucYOD53kHAkSqEUBwGFiLnUK0mUM9DjGco_dF5a-g3yLpt6sH8XIWC_YavJJwdjK3E2vYuNScnFY4avos54mm3vmdPLE5salk"/>
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-100">Cá Hồi &amp; Gạo Lứt</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">450kcal • 35g Protein</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Progress Card -->
+<div class="bg-slate-900 text-white p-6 rounded-2xl shadow-xl shadow-slate-900/20">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                            Tiến độ cá nhân
+                        </h3>
+<span class="text-xs bg-white/10 px-2 py-1 rounded">Hàng tuần</span>
+</div>
+<div class="flex items-end gap-2 h-24 mb-6 px-2">
+<div class="w-full bg-primary/20 rounded-t h-[80%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t h-[60%] transition-all group-hover:brightness-110"></div>
+</div>
+<div class="w-full bg-primary/20 rounded-t h-[100%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t h-[85%] transition-all group-hover:brightness-110"></div>
+</div>
+<div class="w-full bg-primary/20 rounded-t h-[90%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t h-[70%] transition-all group-hover:brightness-110"></div>
+</div>
+<div class="w-full bg-primary/20 rounded-t h-[85%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t h-[90%] transition-all group-hover:brightness-110"></div>
+</div>
+<div class="w-full bg-primary/20 rounded-t h-[70%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t h-[50%] transition-all group-hover:brightness-110"></div>
+</div>
+</div>
+<div class="flex justify-between items-center text-sm border-t border-white/10 pt-4">
+<div>
+<p class="text-white/60">Cân nặng hiện tại</p>
+<p class="font-black text-xl">68.0kg</p>
+</div>
+<div class="text-right">
+<p class="text-white/60">Giảm được</p>
+<p class="font-black text-xl text-primary">-4.0kg</p>
+</div>
+</div>
+</div>
+<!-- Social Proof -->
+<div class="flex flex-col items-center gap-3">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-4 border-background-light dark:border-background-dark object-cover" data-alt="Khuôn mặt người dùng nữ trẻ" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdL81JAfbc2TtQiqMJBCumg1Hz6ccBBVRUl3j9c01IR_YonFmrul1ZPPqFq-94XJioLKp3p47QFbjkEwPC69HBeoB2ZRjuPxmr78qF2fluInylPaOLzQdN3raMBaJKxtY4Wn1s6SJQUR6-26JTeUCMlAiORWuW10qxvt_lCSvdxOJKvWWq40wNqwF5GZsZaiqBTnHZizkqtC5bzC4EpIMTDwGdXCbmA-uwgnV-MpV1xFvzEm-fDSdnRZRjtSa_rnnTLygfoXnDLwrb"/>
+<img class="w-10 h-10 rounded-full border-4 border-background-light dark:border-background-dark object-cover" data-alt="Khuôn mặt người dùng nam trẻ" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL3vFPYJYFycr8tNDSiAIuBuwWl81uJD4DudEZJfg2i2yeutZIglBQsZrvoI7_dKb4H0m1h4eZhOWBqD6GusmrfUhlWcY07Ev4tqNwr-H-Sei5w2XyEWYmrmYaBPkMxnoDqzbIbN3tOD88pwCWSdR5lh6e-kogTg8e9OUJD73TQc2CcqbJ2Ym_nPMdhBs4WnQ_mDSCmOAekXMO49eCpICHKob0i4RU6qlWJD7GPgITMrmrs3Kq-77_o1MmKIYR0AO8qtWh8hxHK_x-"/>
+<img class="w-10 h-10 rounded-full border-4 border-background-light dark:border-background-dark object-cover" data-alt="Khuôn mặt người dùng nữ khác" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZHbf3bVHbLLTiWEKBLRsCn32w-Qy0lGbDC-Q-QpKAfJR0yT0LXjEOeSo8rMSL_wJ-GfX7mbBuK0abUeSPjZtScWHjrfJmgC86eThQRIq2GoQSxfU_fGjWEf189pCg8HtabLhAAgK6m8X2ibCiZKTFi7CdyedDb0oldWh1BNd88UtIHnDhWPmblBHYbMpd8e-Q4DWfeNlGyG67oKMcGaMmEJuN-18O0vCAJGUa1zAhi_4qpjqePlP6yI99J1mEP9csPWqK3J9-Dcpk"/>
+<div class="w-10 h-10 rounded-full border-4 border-background-light dark:border-background-dark bg-primary text-white flex items-center justify-center text-[10px] font-bold">+10k</div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium max-w-xs text-center">
+                        Hơn 10,000 người Việt đã thay đổi cuộc sống cùng NutriAI
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-8 border-t border-primary/10 bg-white dark:bg-background-dark text-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm">
+            © 2025 NutriAI. Made with healthy passion in Vietnam.
+        </p>
+</footer>
+</body></html>

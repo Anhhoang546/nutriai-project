@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2E9B57",
+                        "background-light": "#F0FFF4",
+                        "background-dark": "#061a0c",
+                        "macro-blue": "#3B82F6",
+                        "macro-orange": "#F97316",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>NutriAI Dashboard</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex min-h-screen">
+<!-- Sidebar -->
+<aside class="w-[220px] fixed h-screen bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col z-10">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">nutrition</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-primary">NutriAI</h1>
+</div>
+<nav class="flex-1 px-4 mt-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-sm font-medium">Trang chủ</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">calendar_today</span>
+<span class="text-sm font-semibold">Nhật ký</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="text-sm font-medium">Gợi ý AI</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="text-sm font-medium">Thực đơn 7 ngày</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-sm font-medium">Cộng đồng</span>
+</a>
+</nav>
+<div class="p-4 mt-auto border-t border-slate-100 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Cá nhân</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-[220px] flex-1">
+<!-- Header -->
+<header class="h-16 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-8 flex items-center justify-between sticky top-0 z-[5]">
+<h2 class="text-lg font-bold">Xin chào, Nguyễn An! 👋</h2>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full relative transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar of Nguyen An" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFwaJDcvn6Bkeagyu6OJzvZVUKC9C2NRgfOIiaE9YSkxIEfdi-aAXUKmgyf0vtNod4XnGSUbttVI-bSdupBNpCxXTvMtgddcKbjp5heAESgTEvu7rYf7DJjnIEAHv1iyRv9Cr2-zAvcPgd5qgqthr89XBNJq0TLAm7A54zTzQtqfZjKAZ_o0cl1T7gBI_q1PYhHYoV8qSlLXEa51I0rPsD48wmeOFDfR-1ehNDFXxAXRPam9e_BNdNQA6UwfavCW28bPHAfAV1ysF7"/>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- LEFT COLUMN -->
+<div class="xl:col-span-2 space-y-8">
+<!-- Calorie Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-slate-500 text-sm font-medium uppercase tracking-wider">Calo hôm nay</h3>
+<p class="text-3xl font-bold mt-1">1.200 <span class="text-slate-400 text-lg font-normal">/ 1.400 kcal</span></p>
+</div>
+<span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full uppercase">CÒN LẠI 200 kcal</span>
+</div>
+<div class="space-y-2">
+<div class="h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all" style="width: 85%"></div>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 font-medium">Tiến độ</span>
+<span class="text-primary font-bold">85%</span>
+</div>
+</div>
+</div>
+<!-- Macro Row -->
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center">
+<div class="relative w-20 h-20 mb-3 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-800" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226.2" stroke-dashoffset="45.2" stroke-width="6"></circle>
+</svg>
+<span class="absolute text-sm font-bold">80%</span>
+</div>
+<p class="text-xs font-bold text-slate-400 uppercase">Đạm</p>
+<p class="text-sm font-bold mt-0.5">80/100g</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center">
+<div class="relative w-20 h-20 mb-3 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-800" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-macro-blue" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226.2" stroke-dashoffset="56.5" stroke-width="6"></circle>
+</svg>
+<span class="absolute text-sm font-bold">75%</span>
+</div>
+<p class="text-xs font-bold text-slate-400 uppercase">Tinh bột</p>
+<p class="text-sm font-bold mt-0.5">150/200g</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center">
+<div class="relative w-20 h-20 mb-3 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-800" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-macro-orange" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226.2" stroke-dashoffset="76.9" stroke-width="6"></circle>
+</svg>
+<span class="absolute text-sm font-bold">66%</span>
+</div>
+<p class="text-xs font-bold text-slate-400 uppercase">Béo</p>
+<p class="text-sm font-bold mt-0.5">40/60g</p>
+</div>
+</div>
+<!-- Meal Log Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<div class="p-6 flex justify-between items-center border-b border-slate-100 dark:border-slate-800">
+<h3 class="text-lg font-bold">Nhật ký bữa ăn</h3>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">Xem tất cả</a>
+</div>
+<div class="p-6 space-y-6">
+<!-- Breakfast -->
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-lg overflow-hidden bg-slate-100">
+<img class="w-full h-full object-cover" data-alt="Traditional Vietnamese Pho chicken noodle soup bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJoE7mQEqQnhMuSJZnZG_FZ-scm49CEVU1SJdTz7Hf4O4--l6sYk2dQwqiZCSPsQFvChIT1_1XtlTtXdJ0ipZzgy6hd85dOfLDEU5i8VJD2nOGLZzglNyk3mT8WTpQrNDAtuXNP9W6HsE549B_SmgtWpJRxT5z2tsGQHzlsm9dyfHcT4MiuWAIszX31hec-MWmVtjlTt7RiA8pUFRgU7v8yVZjBIG-tjv5pm4CxS5IcmlHSM0bzV1ZIhUIPH6MmfBpMHSYRpsH3urH"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<h4 class="font-bold">Bữa sáng ☀️</h4>
+<span class="text-slate-500 text-sm">350kcal</span>
+</div>
+<p class="text-slate-500 text-sm italic">Phở gà</p>
+</div>
+</div>
+<!-- Lunch -->
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-lg overflow-hidden bg-slate-100">
+<img class="w-full h-full object-cover" data-alt="Bun cha grilled pork and orange juice" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0cD4zYBRkWfez3U373p5WDc0N08BOgUvKc-e6_KWTBIO3dz7pQEdiEnQHk6m7hyfo0ua6wvHAZIup1EdtxMACzA-GfMjxoaq9IY2t1rFA6vfufrxoRLkPb1AV0jVGb96AcG3QTVuRv3s_vFDrCi04qOQpeB6hWvHGY5dlcNr0EtpqbiHdEQ0ayttg45BK0EAyy_AReY12htOMUeAwD6RZojN_QD2zSIW7cMgWWQPoF20L9MqihBSxaKTj-O73LspxVcpomHJoYDrY"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<h4 class="font-bold">Bữa trưa 🌤</h4>
+<span class="text-slate-500 text-sm">550kcal</span>
+</div>
+<p class="text-slate-500 text-sm italic">Bún chả, Nước cam</p>
+</div>
+</div>
+<!-- Dinner -->
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-lg overflow-hidden bg-slate-100">
+<img class="w-full h-full object-cover" data-alt="Mixed green garden salad bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGeAYMqWnafMfju7Spsp-CqT5p16NTM8x-PiEyqKhUKlBxjbAHq5IdHMptTvw0LXhca_xI0SuWrJ-vIQGwIkNQ0VOsSj6LbrMhlf9gWx3b8dnZnD3brlwDszFcj5nV1d0poaRkrVOnYuzOO8p3ih_l-DimmIv6pwWtYK6MQKWdnCfRyyPZ0zjJsh3mDV64GEzz1NK74SgpX__vrHg2VHSmd6byQ4ho0onm96qAM0TsEmHhzFnsmf0e8KO_JJeI4C9Pgnx_six-EJa7"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<h4 class="font-bold">Bữa tối 🌙</h4>
+<span class="text-slate-500 text-sm">300kcal</span>
+</div>
+<p class="text-slate-500 text-sm italic">Salad trộn</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN -->
+<div class="space-y-8">
+<!-- 7-day Bar Chart -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<h3 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-6">Lịch sử Calo 7 ngày</h3>
+<div class="h-40 flex items-end justify-between gap-2 relative">
+<!-- Target Line -->
+<div class="absolute w-full border-t border-dashed border-slate-300 dark:border-slate-700 top-[15%] z-0">
+<span class="absolute right-0 -top-4 text-[10px] text-slate-400">Target 1400</span>
+</div>
+<!-- Bars -->
+<div class="flex flex-col items-center flex-1 gap-2 group z-[1]">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t h-[65%]"></div>
+<span class="text-xs font-medium text-slate-400">T2</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2 group z-[1]">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t h-[80%]"></div>
+<span class="text-xs font-medium text-slate-400">T3</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2 group z-[1]">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t h-[45%]"></div>
+<span class="text-xs font-medium text-slate-400">T4</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2 group z-[1]">
+<div class="w-full bg-primary rounded-t h-[85%]"></div>
+<span class="text-xs font-bold text-primary">T5</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2 group z-[1]">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t h-[70%]"></div>
+<span class="text-xs font-medium text-slate-400">T6</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2 group z-[1]">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t h-[55%]"></div>
+<span class="text-xs font-medium text-slate-400">T7</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2 group z-[1]">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t h-[40%]"></div>
+<span class="text-xs font-medium text-slate-400">CN</span>
+</div>
+</div>
+</div>
+<!-- Quick Add Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<h3 class="text-lg font-bold mb-4">Thêm bữa ăn nhanh</h3>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 p-3 border border-primary text-primary rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-base">add</span> Bữa sáng
+                            </button>
+<button class="flex items-center justify-center gap-2 p-3 border border-primary text-primary rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-base">add</span> Bữa trưa
+                            </button>
+<button class="flex items-center justify-center gap-2 p-3 border border-primary text-primary rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-base">add</span> Bữa tối
+                            </button>
+<button class="flex items-center justify-center gap-2 p-3 border border-primary text-primary rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-base">add</span> Snack
+                            </button>
+</div>
+</div>
+<!-- AI Suggestion -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<div class="p-6">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+                                Gợi ý hôm nay từ AI
+                            </h3>
+</div>
+<div class="px-6 pb-6">
+<div class="rounded-xl overflow-hidden relative group cursor-pointer mb-4">
+<img class="w-full aspect-[4/3] object-cover transition-transform group-hover:scale-105" data-alt="A healthy colorful Buddha bowl recipe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvvHRoViiCI9cZDXsku2I0anyrjlmQVHpZcRmCb7KdfThvwC-BtVcITQDgzqrg89U9Sab70JeEy5hLhCgARJZNqX_PC94XvItUtkOA39nIWtIhTlFYxHd-GMP-thNDuzm2uxXhTaUyVxglo77HvuolyliDiHvpcztHRVmXx5QCy4RuwkhkPMXFP04wzQvP3zZLgKUiJhj_i-qwWOv1T5KuzacfSNf2z1H2rlv2P_PnV_wdbkHFfv8jHnMxahhKhPqWVU-ISIz8_LFw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
+<h4 class="text-white font-bold leading-snug">Salad Ức Gà và Bơ với Sốt Chanh Dây</h4>
+<p class="text-white/80 text-xs">420 kcal • 20 phút</p>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-white rounded-lg font-bold shadow-md shadow-primary/20 hover:bg-primary/90 transition-colors">
+                                Xem thêm gợi ý
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

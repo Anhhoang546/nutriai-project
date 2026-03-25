@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2E9B57",
+                        "background-light": "#F0FFF4",
+                        "background-dark": "#0a1a10",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-white dark:bg-slate-900 border-r border-primary/10 flex flex-col h-screen sticky top-0">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl">nutrition</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-primary tracking-tight">NutriAI</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Ăn sạch, Sống khỏe</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/5 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-medium">Trang chủ</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-white rounded-xl shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-medium">Gợi ý AI</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/5 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-medium">Nhật ký</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/5 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-medium">Cá nhân</span>
+</a>
+</nav>
+<div class="p-4">
+<div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-4 border border-primary/10">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-xl">workspace_premium</span>
+<span class="text-sm font-bold text-slate-800 dark:text-slate-200">Gói miễn phí</span>
+</div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs text-slate-500">Lượt dùng AI</span>
+<span class="text-xs font-bold text-primary">12/15</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 80%"></div>
+</div>
+<button class="w-full mt-4 py-2 text-xs font-bold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">
+                    Nâng cấp ngay
+                </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto">
+<!-- Top Header -->
+<header class="h-20 flex items-center justify-end px-10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md sticky top-0 z-10 border-b border-primary/5">
+<div class="flex items-center gap-6">
+<button class="relative p-2 text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-200 dark:border-slate-700">
+<div class="text-right">
+<p class="text-sm font-bold">Minh Anh</p>
+<p class="text-xs text-slate-500">Premium User</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-200 border-2 border-primary/20 overflow-hidden">
+<img alt="User profile" data-alt="Portrait of a young smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYkrF6JbbLuKtYBhqc9FxLI149dpqmg7eDmKmrkrnfyQk1bXnQ2vBDDMMsKZ4CkLNSHBPAz21kpBxKUC26XF1G3e8ooExxagW4JuRKshDk0FXSGH-4hjMlIh3oSTAbQOaNp_156BYMY2LG-0a1DdjGHRW0K0-rhHP04MyiDIufTzabJLoz1dkSELwfGFIGnPJEL_Zy6KnnYsT6s_c0V2p7Oa2jI28NBCtewW_6bTfJSoVGcLf8nhSmoPx9pr1ZuSZNEeo2U-Ivlhp9"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-10 max-w-6xl mx-auto">
+<!-- Hero Title -->
+<div class="mb-10">
+<h2 class="text-4xl font-black text-slate-900 dark:text-white tracking-tight">Gợi ý món ăn bằng AI</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-2 text-lg">Nhập nguyên liệu bạn có, AI sẽ thiết kế bữa ăn hoàn hảo</p>
+</div>
+<!-- Input Section Card -->
+<section class="bg-white dark:bg-slate-900 rounded-3xl p-8 shadow-sm border border-primary/5 mb-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-8">
+<!-- Ingredients List -->
+<div>
+<h3 class="text-sm font-bold text-primary uppercase tracking-widest mb-4">NGUYÊN LIỆU HIỆN CÓ</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium flex items-center gap-2">
+                                Trứng <button class="material-symbols-outlined text-sm">close</button>
+</span>
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium flex items-center gap-2">
+                                Cà chua <button class="material-symbols-outlined text-sm">close</button>
+</span>
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium flex items-center gap-2">
+                                Hành tây <button class="material-symbols-outlined text-sm">close</button>
+</span>
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium flex items-center gap-2">
+                                Tỏi <button class="material-symbols-outlined text-sm">close</button>
+</span>
+<button class="px-4 py-2 border border-dashed border-primary/40 text-primary rounded-full text-sm font-medium flex items-center gap-1 hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-sm">add</span> Thêm
+                            </button>
+</div>
+</div>
+<!-- Calorie Slider -->
+<div>
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-sm font-bold text-primary uppercase tracking-widest">THANH TRƯỢT LƯỢNG CALO</h3>
+<span class="text-primary font-bold">200 - 800 kcal</span>
+</div>
+<input class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary" max="1500" min="200" type="range" value="800"/>
+<div class="flex justify-between mt-2 text-xs text-slate-400 font-medium">
+<span>200 kcal</span>
+<span>1500 kcal</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-primary/30 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">auto_awesome</span>
+                    Gợi ý món ăn ngay
+                </button>
+</section>
+<!-- Results Section -->
+<section>
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-2xl font-bold flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">restaurant_menu</span>
+                        Kết quả gợi ý từ AI
+                    </h3>
+<button class="text-slate-400 hover:text-slate-600 flex items-center gap-1 text-sm font-medium">
+<span class="material-symbols-outlined text-sm">close</span> Đóng kết quả
+                    </button>
+</div>
+<!-- Recipe Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm border border-primary/5 group">
+<div class="relative h-48">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Steaming bowl of Pho Chicken" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw1R9s8QiBDndnRh8bSRukbzKgPx8NMDXmd_AeDswa1Pkz3S7upMysxVeQbpW089yTeV3PbXQ09AoKzDfAodOCqwSwmDXvVvHWMLOCm6N0FXRBSbhC6ejqv38hRlBD2P08tGnkZx_iVeZnOKEjCXyd8WocgHM7oKYHPwL2WIfirwUKph885JRhYZ9YXheubjKDnx6SXip757FCSsuAe-sghOBJcks1BfQF9beRSUpAdMlVSZBdKd4kmoWOZ6uXzXzBI4EtPAIIhY11"/>
+<div class="absolute top-4 left-4 z-20 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<span class="text-xs font-bold text-slate-800">25 phút</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-xl font-extrabold text-slate-800 dark:text-white mb-1">Phở Gà Hà Nội</h4>
+<p class="text-2xl font-black text-primary mb-4">450 <span class="text-sm font-medium text-slate-400 uppercase">kcal</span></p>
+<div class="space-y-4 mb-6">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase mb-2">Nguyên liệu</p>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Ức gà, bánh phở, hành lá, gừng nướng, quế hồi.</p>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase mb-2">Các bước thực hiện</p>
+<ul class="text-sm text-slate-600 dark:text-slate-300 space-y-1">
+<li class="flex gap-2"><span>1.</span> Nấu nước dùng từ xương gà.</li>
+<li class="flex gap-2"><span>2.</span> Luộc gà và xé nhỏ.</li>
+<li class="flex gap-2"><span>3.</span> Trình bày bánh phở, gà.</li>
+</ul>
+</div>
+</div>
+<button class="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined">check_circle</span>
+                                Thêm vào nhật ký
+                            </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm border border-primary/5 group">
+<div class="relative h-48">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Plate of Vietnamese broken rice with pork" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1UivcDLXknIEVGM_f3sB3k2cpUCvdrEhcXHh4858vhX4uCejuP856tlb7MIOK-RcTwErFHtw6C83HcY3igAhYviA8HRhM6hlG-48P50oppuJmM8aebr7ldndRPPxhK6iFPH4YLrzj7noVzPdJelGz8iLt4xwt2mq8cmrws4qtXahCk4iDsHguSr-__bxc50emgMFuB5r_HgX2gIuOYjlxmwlcw_2uLlgdvElDv1dbINxYQf04tcRLNMZotZHe0gwztPvT53oIawbB"/>
+<div class="absolute top-4 left-4 z-20 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<span class="text-xs font-bold text-slate-800">35 phút</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-xl font-extrabold text-slate-800 dark:text-white mb-1">Cơm Tấm Sườn Bì</h4>
+<p class="text-2xl font-black text-primary mb-4">620 <span class="text-sm font-medium text-slate-400 uppercase">kcal</span></p>
+<div class="space-y-4 mb-6">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase mb-2">Nguyên liệu</p>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Gạo tấm, sườn nướng, bì heo, trứng, mỡ hành.</p>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase mb-2">Các bước thực hiện</p>
+<ul class="text-sm text-slate-600 dark:text-slate-300 space-y-1">
+<li class="flex gap-2"><span>1.</span> Nấu cơm tấm dẻo.</li>
+<li class="flex gap-2"><span>2.</span> Ướp và nướng sườn vàng.</li>
+<li class="flex gap-2"><span>3.</span> Làm nước mắm chua ngọt.</li>
+</ul>
+</div>
+</div>
+<button class="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined">check_circle</span>
+                                Thêm vào nhật ký
+                            </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm border border-primary/5 group">
+<div class="relative h-48">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Bun Cha bowl with grilled pork patties" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnSFrRgaezaUxS4O8JonRvf0fqntcUycHqy1PucPz_9Xl9dJ5ORPeAM5Z5NEzqrH-FcCDqI83e2t6too4m8bsfoTYmdTUeC5cyToVQAiM-xzSj3CGJbNW_wu92gV-_ocEAnkPEiEK7WeD9ofScN_ZK6c-kbxhJBGqnbAqLFkcHnoviDw7ragqDyRnmL0m71o3UurCt3Bnsn2ZaoBq9Gytq2yBFA2E1yYkmu5akv6zM3-CV3JsWGgJb8JOCoom62wbaTO4jSTnOr3uD"/>
+<div class="absolute top-4 left-4 z-20 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<span class="text-xs font-bold text-slate-800">30 phút</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-xl font-extrabold text-slate-800 dark:text-white mb-1">Bún Chả Hà Nội</h4>
+<p class="text-2xl font-black text-primary mb-4">510 <span class="text-sm font-medium text-slate-400 uppercase">kcal</span></p>
+<div class="space-y-4 mb-6">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase mb-2">Nguyên liệu</p>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Thịt ba chỉ nướng, bún tươi, rau sống, nước chấm.</p>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase mb-2">Các bước thực hiện</p>
+<ul class="text-sm text-slate-600 dark:text-slate-300 space-y-1">
+<li class="flex gap-2"><span>1.</span> Ướp thịt với gia vị đặc trưng.</li>
+<li class="flex gap-2"><span>2.</span> Nướng thịt trên than hoa.</li>
+<li class="flex gap-2"><span>3.</span> Pha nước chấm tỏi ớt.</li>
+</ul>
+</div>
+</div>
+<button class="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined">check_circle</span>
+                                Thêm vào nhật ký
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Subtle Footer -->
+<footer class="mt-20 py-10 text-center text-slate-400 text-sm border-t border-primary/5">
+<p>© 2024 NutriAI. Phát triển bởi trí tuệ nhân tạo vì sức khỏe người Việt.</p>
+</footer>
+</main>
+</body></html>
