@@ -128,6 +128,7 @@ Quy tắc tuyệt đối:
       ],
       max_tokens: 2500,
       temperature: 0.65,
+      response_format: { type: "json_object" },
     });
 
     const text = completion.choices[0]?.message?.content || "";
